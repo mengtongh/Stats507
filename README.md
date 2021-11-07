@@ -1,6 +1,6 @@
 # Stats507
 This repository stores jupyter notebooks for STATS507 homeworks for Fall 2021.
-\
+
 ### PS6 
 [NHANES_data_clean.ipynb](/HW6/NHANES_data_clean.ipynb) is created for reading, cleaning, and appending several data files from the National Health and Nutrition Examination Survey [NHANES](https://www.cdc.gov/nchs/nhanes/index.htm) for four cohorts spanning the years 2011-2018. 
 \
