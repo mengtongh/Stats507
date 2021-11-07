@@ -8,7 +8,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.12.0
+#       jupytext_version: 1.13.0
 #   kernelspec:
 #     display_name: Python 3 (ipykernel)
 #     language: python
@@ -29,6 +29,10 @@ from IPython.core.display import display, HTML
 from scipy import stats 
 import numpy as np
 
+
+# ### GSI comments: 
+# Q0: -3 for don't provide both raw and formatted versions
+#
 
 # ## Question 1
 
@@ -51,6 +55,25 @@ import numpy as np
 # 2. Item 2
 # 3. Item 3
 # ***
+# ```
+# ---
+# The next question is about the __Fibonnaci sequence__, $F_n=F_{n−2}+F_{n−1}$. In part __a__ we will define a Python function `fib_rec()`.
+# <br>
+# Below is a ...
+# ### Level 3 Header
+# Next, we can make a bulleted list:
+# - Item 1
+#     * detail 1
+#     * detail 2
+# - Item 2
+# <br>
+# Finally, we can make an enumerated list:
+# 1. Item 1
+# 2. Item 2
+# 3. Item 3
+# ***
+# ---
+# ```
 
 # ## Question 2 - Fibonnaci Sequence
 
@@ -357,6 +380,8 @@ def ci_mean(a, level, output_format= True):
     se = np.std(a, ddof=1) / math.sqrt(n)
     tail_prop = (100 - level) / 2 / 100
     z_val = - stats.norm.ppf(tail_prop)
+    print(z_val)
+    print(se)
     mean = sum(a) / n
     lwr, upr  = mean - z_val * se, mean + z_val * se
     res = {'est' : mean, 'lwr' : lwr, 
@@ -488,6 +513,8 @@ compare_ci_tb = pd.DataFrame.from_dict(compare_ci, orient = 'index',
                                          columns=['confidence level = 90', 'confidence level = 95', 'confidence level = 99'])
 display(HTML(compare_ci_tb.to_html()))
 
+
+ci_mean([1,2,3],95)
 
 # - For all Confidence levels, Agresti-Coull gives the smallest width
 #
